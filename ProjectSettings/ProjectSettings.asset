@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 26
-  productGUID: 4a97e21af9591f14780ff51277dd9707
+  productGUID: d6140046af63aaa4091d4e6577913a9e
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: DefaultCompany
-  productName: GameJam2024
+  productName: gamejam_
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -673,14 +673,14 @@ PlayerSettings:
   apiCompatibilityLevelPerPlatform: {}
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: GameJam2024
+  metroPackageName: gamejam_
   metroPackageVersion: 
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
   metroCertificateIssuer: 
   metroCertificateNotAfter: 0000000000000000
-  metroApplicationDescription: GameJam2024
+  metroApplicationDescription: gamejam_
   wsaImages: {}
   metroTileShortName: 
   metroTileShowName: 0
@@ -749,10 +749,10 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   activeInputHandler: 0
   windowsGamepadBackendHint: 0
-  cloudProjectId: c5a779c4-c48b-434e-b2c1-1ef04b347db2
+  cloudProjectId: da7b856d-2bc7-4251-bb02-8108ba7c90ea
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: GameJam2024 2024-05-26_21-11-59
+  projectName: gamejam_
   organizationId: plex0
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
