@@ -7,9 +7,6 @@ public class PlayerMovement : MonoBehaviour
 
 	public CharacterController CharacterController;
 
-	public Camera mainCamera;
-	public GameObject cameraPoint;
-	public GameObject cameraCrouchPoint;
 	public float movementSpeed = 9.0f;
 	public float currentMovementSpeed;
 	public float maxMovementSpeedOnWalk = 9.0f;
@@ -50,17 +47,6 @@ public class PlayerMovement : MonoBehaviour
 	{
 		float moveWS = Input.GetAxis("Vertical") * movementSpeed;
 		float moveAD = Input.GetAxis("Horizontal") * movementSpeed;
-
-		//
-		if(Input.GetKeyDown(KeyCode.LeftControl))
-        {
-			mainCamera.transform.position = cameraCrouchPoint.transform.position;
-        }
-		else if(Input.GetKeyUp(KeyCode.LeftControl))
-        {
-			mainCamera.transform.position = cameraPoint.transform.position;
-			
-		}
 
 
 		//jump
