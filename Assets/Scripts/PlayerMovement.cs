@@ -11,8 +11,9 @@ public class PlayerMovement : MonoBehaviour
 	public GameObject cameraPoint;
 	public GameObject cameraCrouchPoint;
 	public float movementSpeed = 9.0f;
-	public float currentMovementSpeed;
 	public float maxMovementSpeedOnWalk = 9.0f;
+	public float maxMovementSpeedOnWalk2 = 9.0f;
+	public float maxMovementSpeedOnCrouch = 4.5f;
 	public float jumpHeight = 7.0f;
 	public float jumpHeightNow = 0f;
 	public float sprintSpeed = 7.0f;
@@ -23,6 +24,7 @@ public class PlayerMovement : MonoBehaviour
 	public bool isSprint;
 	public bool isJump;
 	public bool isInspecting = false;
+	public bool isCrouch = false;
 	// Use this for initialization
 	void Start()
 	{
@@ -41,8 +43,20 @@ public class PlayerMovement : MonoBehaviour
             mouse();
 		    keyboard();
         }
+		
 
+		if(isCrouch)
+        {
+			if(CharacterController.isGrounded)
+			maxMovementSpeedOnWalk = maxMovementSpeedOnCrouch;
 
+			mainCamera.transform.position = cameraCrouchPoint.transform.position;
+		}
+		else if(!isCrouch)
+        {
+			maxMovementSpeedOnWalk = maxMovementSpeedOnWalk2;
+			mainCamera.transform.position = cameraPoint.transform.position;
+		}
 
 	}
 
@@ -51,20 +65,19 @@ public class PlayerMovement : MonoBehaviour
 		float moveWS = Input.GetAxis("Vertical") * movementSpeed;
 		float moveAD = Input.GetAxis("Horizontal") * movementSpeed;
 
-		//
-		if(Input.GetKeyDown(KeyCode.LeftControl))
+        ////crouch
+        if (Input.GetKeyDown(KeyCode.LeftControl) && !isSprint)
         {
-			mainCamera.transform.position = cameraCrouchPoint.transform.position;
+			isCrouch = true;
         }
-		else if(Input.GetKeyUp(KeyCode.LeftControl))
+        else if (Input.GetKeyUp(KeyCode.LeftControl))
         {
-			mainCamera.transform.position = cameraPoint.transform.position;
-			
-		}
+			isCrouch = false;
+        }
 
 
-		//jump
-		if (CharacterController.isGrounded && Input.GetButton("Jump"))
+        //jump
+        if (CharacterController.isGrounded && Input.GetButton("Jump") && !isCrouch)
 		{
 			jumpHeightNow = jumpHeight;
 			isJump = true;
@@ -77,7 +90,7 @@ public class PlayerMovement : MonoBehaviour
 
 
 		//sprint
-		if (Input.GetKeyDown("left shift"))
+		if (Input.GetKeyDown("left shift") && !isCrouch)
 		{
 			movementSpeed += sprintSpeed;
 			isSprint = true;
