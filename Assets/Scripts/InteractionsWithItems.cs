@@ -242,4 +242,5 @@ public class InteractionsWithItems : MonoBehaviour
         isBeingInspected = false;
         playerMovement.isCrouch = false;
     }
+
 }

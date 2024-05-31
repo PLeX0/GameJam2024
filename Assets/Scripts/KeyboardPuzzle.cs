@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-public class KeybordPuzzle : MonoBehaviour
+public class KeyboardPuzzle : MonoBehaviour
 {
     public InteractionsWithItems interactionsWithItems;
-    private string password = "123456";
+    private string password = "643512";
     private string combination = "";
     private int i = 0;
     private char[] number = new char[6];
@@ -91,7 +91,9 @@ public class KeybordPuzzle : MonoBehaviour
     public void Enter()
     {
         if (combination.Equals(password))
-            Debug.Log("poprawna kolejnosc");
+        {
+            CloseWindow();
+        }
         else if(!combination.Equals(password))
             ResetCombination();
     }
