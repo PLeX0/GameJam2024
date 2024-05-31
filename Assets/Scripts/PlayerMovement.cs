@@ -116,6 +116,6 @@ public class PlayerMovement : MonoBehaviour
 
 		mouseUpDown -= Input.GetAxis("Mouse Y") * sensivity;
 		mouseUpDown = Mathf.Clamp(mouseUpDown, -upDownLimit, upDownLimit);
-		Camera.main.transform.localRotation = Quaternion.Euler(mouseUpDown, 0, 0);
+		mainCamera.transform.localRotation = Quaternion.Euler(mouseUpDown, 0, 0);
 	}
 }
