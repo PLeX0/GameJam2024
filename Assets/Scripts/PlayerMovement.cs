@@ -24,6 +24,7 @@ public class PlayerMovement : MonoBehaviour
 	public bool isSprint;
 	public bool isJump;
 	public bool isInspecting = false;
+	public bool isMoveingItem = false;
 	public bool isCrouch = false;
 	// Use this for initialization
 	void Start()
@@ -43,6 +44,11 @@ public class PlayerMovement : MonoBehaviour
             mouse();
 		    keyboard();
         }
+		else if(isInspecting == true && isMoveingItem==true)
+        {
+			mouse();
+			keyboard();
+		}
 		
 
 		if(isCrouch)
@@ -75,6 +81,15 @@ public class PlayerMovement : MonoBehaviour
 			isCrouch = false;
         }
 
+		//zoom
+		if(Input.GetKey(KeyCode.Z) && isInspecting==false)
+        {
+			mainCamera.fieldOfView = 20f;			
+		}
+		else if(Input.GetKeyUp(KeyCode.Z))
+        {
+			mainCamera.fieldOfView = 60f;
+		}
 
         //jump
         if (CharacterController.isGrounded && Input.GetButton("Jump") && !isCrouch)
