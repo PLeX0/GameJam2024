@@ -66,6 +66,7 @@ public class InteractionsWithItems : MonoBehaviour
 
                 if (Input.GetKeyDown(KeyCode.E))
                 {
+                    mainCamera.fieldOfView = 60f;
                     inspectUI.SetActive(true);
                     inspectUIpickUpText.SetActive(false);
                     startPos = item.transform.position;
@@ -129,6 +130,7 @@ public class InteractionsWithItems : MonoBehaviour
 
                 if (Input.GetKeyUp(KeyCode.E))
                 {
+                    mainCamera.fieldOfView = 60f;
                     keyboardUI.SetActive(true);
                     playerMovement.isInspecting = true;
                     isBeingInspected = true;
@@ -186,6 +188,7 @@ public class InteractionsWithItems : MonoBehaviour
 
                 if (Input.GetKeyDown(KeyCode.E))
                 {
+                    mainCamera.fieldOfView = 60f;
                     inspectUI.SetActive(true);
                     inspectUIpickUpText.SetActive(true);
                     startPos = item.transform.position;
@@ -229,6 +232,75 @@ public class InteractionsWithItems : MonoBehaviour
                     item.transform.rotation = startRot;
                     playerMovement.isCrouch = false;
                     this.gameObject.SetActive(false);
+                }
+            }
+        }
+        else if(typeId==3)
+        {
+            if (playerMovement.isInspecting && !isBeingInspected)
+            {
+                return;
+            }
+
+            float mouseX = Input.GetAxis("Mouse X");
+            float mouseY = Input.GetAxis("Mouse Y");
+
+            Ray ray = new Ray(mainCamera.transform.position, mainCamera.transform.forward);
+            RaycastHit raycastHit;
+
+            if (Physics.Raycast(ray, out raycastHit, range))
+            {
+                objectName = raycastHit.collider.gameObject.name;
+                Debug.Log(objectName);
+            }
+            else
+            {
+                objectName = null;
+                Debug.Log(objectName);
+            }
+
+            if (objectName == itemName)
+            {
+                text.SetActive(true);
+                text.transform.LookAt(mainCamera.transform);
+                text.transform.Rotate(0, 180, 0);
+
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    mainCamera.fieldOfView = 60f;
+                    inspectUI.SetActive(true);
+                    inspectUIpickUpText.SetActive(false);
+                    startPos = item.transform.position;
+                    startRot = item.transform.rotation;
+                    playerMovement.isInspecting = true;
+                    playerMovement.isMoveingItem = true;
+                    isBeingInspected = true;
+                    item.transform.rotation = inspectPoint.transform.rotation;
+                }
+
+
+            }
+            else if (objectName != itemName && !playerMovement.isInspecting)
+            {
+                text.SetActive(false);
+            }
+            if (isBeingInspected)
+            {
+                text.SetActive(false);
+                item.transform.position = inspectPoint.transform.position;
+
+                transform.rotation = inspectPoint.transform.rotation;
+
+                //transform.Rotate(Vector3.up, -mouseX * rotationSpeed * Time.deltaTime, Space.World);
+                //transform.Rotate(Vector3.right, mouseY * rotationSpeed * Time.deltaTime, Space.Self);
+
+                if (Input.GetKeyUp(KeyCode.E))
+                {
+                    inspectUI.SetActive(false);
+                    playerMovement.isInspecting = false;
+                    playerMovement.isMoveingItem = false;
+                    isBeingInspected = false;               
+                    playerMovement.isCrouch = false;
                 }
             }
         }
