@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c420939b94fa0a644a962687098685d1
+guid: 89dc899b36449014f8cce769ec0ab184
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,8 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: phong17
-    second: {fileID: 2100000, guid: 2eaccbf0eeac00a4c84de34ab627e02f, type: 2}
+      name: Label
+    second: {fileID: 2100000, guid: e55a2a8ed1ade0148a9b1ce0e0f45556, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
