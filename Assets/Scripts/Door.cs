@@ -6,13 +6,14 @@ using TMPro;
 public class Door : MonoBehaviour
 {
     public InteractionsWithItems interactionsWithItems;
-    private string password = "123456";
+    [SerializeField] private string password = "72248145";
     private string combination = "";
     private int i = 0;
-    private char[] number = new char[6];
+    [SerializeField] private char[] number = new char[8];
     public TMP_Text code;
-    public 
-    
+    [SerializeField] private bool is4WomanPuzzle = false;
+    public Phone phone;
+    public AudioSource audioSource;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,8 +23,8 @@ public class Door : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
-            combination = "";
+        //if (Input.GetKeyDown(KeyCode.Escape))
+        //    combination = "";
 
         code.SetText(combination);
         if(combination.Length>password.Length)
@@ -35,7 +36,7 @@ public class Door : MonoBehaviour
     public void CloseWindow()
     {
         interactionsWithItems.OutFromKeyboard();
-        ResetCombination();
+        //ResetCombination();
     }
 
     public void Button1()
@@ -47,6 +48,7 @@ public class Door : MonoBehaviour
         number[i] = '1';
         combination += number[i];
         i++;
+        audioSource.Play();
     }
     public void Button2()
     {
@@ -57,6 +59,7 @@ public class Door : MonoBehaviour
         number[i] = '2';
         combination += number[i];
         i++;
+        audioSource.Play();
     }
     public void Button3()
     {
@@ -67,6 +70,7 @@ public class Door : MonoBehaviour
         number[i] = '3';
         combination += number[i];
         i++;
+        audioSource.Play();
     }
     public void Button4()
     {
@@ -77,6 +81,7 @@ public class Door : MonoBehaviour
         number[i] = '4';
         combination += number[i];
         i++;
+        audioSource.Play();
     }
     public void Button5()
     {
@@ -87,6 +92,7 @@ public class Door : MonoBehaviour
         number[i] = '5';
         combination += number[i];
         i++;
+        audioSource.Play();
     }
     public void Button6()
     {
@@ -97,6 +103,7 @@ public class Door : MonoBehaviour
         number[i] = '6';
         combination += number[i];
         i++;
+        audioSource.Play();
     }
 
     public void Button7()
@@ -108,6 +115,7 @@ public class Door : MonoBehaviour
         number[i] = '7';
         combination += number[i];
         i++;
+        audioSource.Play();
     }
     public void Button8()
     {
@@ -118,6 +126,7 @@ public class Door : MonoBehaviour
         number[i] = '8';
         combination += number[i];
         i++;
+        audioSource.Play();
     }
     public void Button9()
     {
@@ -128,6 +137,7 @@ public class Door : MonoBehaviour
         number[i] = '9';
         combination += number[i];
         i++;
+        audioSource.Play();
     }
     public void Button0()
     {
@@ -138,27 +148,49 @@ public class Door : MonoBehaviour
         number[i] = '0';
         combination += number[i];
         i++;
+        audioSource.Play();
     }
 
     public void Enter()
     {
-        if (combination.Equals(password))
+        if (combination.Equals(password) && is4WomanPuzzle==false)
         {
             SceneManager.LoadScene("Credits");
         }
+        else if(combination.Equals(password) && is4WomanPuzzle)
+        {
+            phone.callId++;
+            phone.Call(phone.callId);
+            combination = "";
+            number[0] = ' ';
+            CloseWindow();
+        }
         else if (!combination.Equals(password))
             ResetCombination();
+        audioSource.Play();
     }
 
     public void ResetCombination()
     {
-        i = 0;
-        combination = "";
-        number[0] = ' ';
-        number[1] = ' ';
-        number[2] = ' ';
-        number[3] = ' ';
-        number[4] = ' ';
-        number[5] = ' ';
+        if(is4WomanPuzzle==false)
+        {
+            i = 0;
+            combination = "";
+            number[0] = ' ';
+            number[1] = ' ';
+            number[2] = ' ';
+            number[3] = ' ';
+            number[4] = ' ';
+            number[5] = ' ';
+            number[6] = ' ';
+            number[7] = ' ';
+        }
+        else if(is4WomanPuzzle==true)
+        {
+            i = 0;
+            combination = "";
+            number[0] = ' ';
+        }
+        audioSource.Play();
     }
 }

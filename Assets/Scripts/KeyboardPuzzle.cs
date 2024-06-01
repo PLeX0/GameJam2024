@@ -9,6 +9,8 @@ public class KeyboardPuzzle : MonoBehaviour
     private string combination = "";
     private int i = 0;
     private char[] number = new char[6];
+    public Phone phone;
+    public AudioSource audioSource;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,6 +38,7 @@ public class KeyboardPuzzle : MonoBehaviour
         number[i] = '1';
         combination += number[i];
         i++;
+        audioSource.Play();
     }
     public void Button2()
     {
@@ -46,6 +49,7 @@ public class KeyboardPuzzle : MonoBehaviour
         number[i] = '2';
         combination += number[i];
         i++;
+        audioSource.Play();
     }
     public void Button3()
     {
@@ -56,6 +60,7 @@ public class KeyboardPuzzle : MonoBehaviour
         number[i] = '3';
         combination += number[i];
         i++;
+        audioSource.Play();
     }
     public void Button4()
     {
@@ -66,6 +71,7 @@ public class KeyboardPuzzle : MonoBehaviour
         number[i] = '4';
         combination += number[i];
         i++;
+        audioSource.Play();
     }
     public void Button5()
     {
@@ -76,6 +82,7 @@ public class KeyboardPuzzle : MonoBehaviour
         number[i] = '5';
         combination += number[i];
         i++;
+        audioSource.Play();
     }
     public void Button6()
     {
@@ -86,6 +93,7 @@ public class KeyboardPuzzle : MonoBehaviour
         number[i] = '6';
         combination += number[i];
         i++;
+        audioSource.Play();
     }
 
     public void Enter()
@@ -93,9 +101,12 @@ public class KeyboardPuzzle : MonoBehaviour
         if (combination.Equals(password))
         {
             CloseWindow();
+            phone.callId++;
+            phone.Call(phone.callId);
         }
         else if(!combination.Equals(password))
             ResetCombination();
+        audioSource.Play();
     }
 
     public void ResetCombination()
@@ -108,5 +119,6 @@ public class KeyboardPuzzle : MonoBehaviour
         number[3] = ' ';
         number[4] = ' ';
         number[5] = ' ';
+        audioSource.Play();
     }
 }

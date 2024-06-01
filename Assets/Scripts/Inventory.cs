@@ -29,7 +29,7 @@ public class Inventory : MonoBehaviour
         mouseX = Input.GetAxis("Mouse X");
         mouseY = Input.GetAxis("Mouse Y");
 
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        if (Input.GetKeyDown(KeyCode.F))
         {
             UseItem(itemIdInSlot[0]);
         }

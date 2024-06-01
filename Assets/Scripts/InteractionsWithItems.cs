@@ -23,7 +23,6 @@ public class InteractionsWithItems : MonoBehaviour
     public float rotationSpeed = 100.0f;
     public Vector3 startPos;
     public Quaternion startRot;
-
     private bool isBeingInspected = false;
 
     void Start()

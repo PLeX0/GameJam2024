@@ -14,7 +14,7 @@ public class Credits : MonoBehaviour
     void Update()
     {
         transform.position += new Vector3(0, 0.02f, 0);
-        if (Input.GetKey(KeyCode.Escape) || Input.GetKey(KeyCode.Escape))
+        if (Input.GetKey(KeyCode.Escape) || Input.GetKey(KeyCode.Space))
             Application.Quit();
     }
 }
