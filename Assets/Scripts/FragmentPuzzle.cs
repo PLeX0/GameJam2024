@@ -8,6 +8,7 @@ public class FragmentPuzzle : MonoBehaviour
     public GameObject paintingWithFragment;
     public GameObject painting;
     public PlayerMovement playerMovement;
+    public Phone phone;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +30,8 @@ public class FragmentPuzzle : MonoBehaviour
             fragment.SetActive(false);
             playerMovement.isInspecting = false;
             playerMovement.isMoveingItem = false;
+            phone.callId++;
+            phone.Call(phone.callId);
         }
     }
 }

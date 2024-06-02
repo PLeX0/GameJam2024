@@ -12,8 +12,12 @@ public class Door : MonoBehaviour
     [SerializeField] private char[] number = new char[8];
     public TMP_Text code;
     [SerializeField] private bool is4WomanPuzzle = false;
+    [SerializeField] private bool isSafe = false;
     public Phone phone;
     public AudioSource audioSource;
+    public GameObject openSafe;
+    public GameObject closedSafe;
+    public GameObject fragment;
     // Start is called before the first frame update
     void Start()
     {
@@ -153,7 +157,7 @@ public class Door : MonoBehaviour
 
     public void Enter()
     {
-        if (combination.Equals(password) && is4WomanPuzzle==false)
+        if (combination.Equals(password) && is4WomanPuzzle==false &&isSafe==false)
         {
             SceneManager.LoadScene("Credits");
         }
@@ -165,6 +169,15 @@ public class Door : MonoBehaviour
             number[0] = ' ';
             CloseWindow();
         }
+        else if(combination.Equals(password) && isSafe)
+        {
+            CloseWindow();
+            ResetCombination();
+            closedSafe.SetActive(false);
+            openSafe.SetActive(true);
+            fragment.SetActive(true);
+            interactionsWithItems.typeId = -1;
+        }
         else if (!combination.Equals(password))
             ResetCombination();
         audioSource.Play();
@@ -172,7 +185,7 @@ public class Door : MonoBehaviour
 
     public void ResetCombination()
     {
-        if(is4WomanPuzzle==false)
+        if(is4WomanPuzzle==false && isSafe==false)
         {
             i = 0;
             combination = "";
@@ -190,6 +203,15 @@ public class Door : MonoBehaviour
             i = 0;
             combination = "";
             number[0] = ' ';
+        }
+        else if(isSafe==true)
+        {
+            i = 0;
+            combination = "";
+            number[0] = ' ';
+            number[1] = ' ';
+            number[2] = ' ';
+            number[3] = ' ';
         }
         audioSource.Play();
     }

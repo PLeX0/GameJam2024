@@ -250,8 +250,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.3401, y: -28.2467}
-  m_SizeDelta: {x: 88.1959, y: 61.4934}
+  m_AnchoredPosition: {x: 0, y: -28.2467}
+  m_SizeDelta: {x: 132.7956, y: 61.4934}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &600074957
 MonoBehaviour:
@@ -273,27 +273,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Sample text - sample text
-
-
-    Sample text - sample text
-
-
-    Sample
-    text - sample text
-
-
-    Sample text - sample text
-
-
-    Sample text - sample
-    text
-
-
-    Sample text - sample text
-
-
-    Sample text - sample text'
+  m_text: "Aleksandra Szewczyk - 2D Artist\n\nDabi Sarapuk - 3D, 2D Artist\n\nKacper
+    Bajda - Programming, Unity\n\nPatrycja \u0141okczewska - 2D Artist\n\nPawe\u0142
+    Kr\u0119czewski - 3D, Enivorment, Unity\n\n\n\n\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
