@@ -6,7 +6,7 @@ using TMPro;
 public class InteractionsWithItems : MonoBehaviour
 {
     [SerializeField] private float range = 1f;
-    [SerializeField] private int typeId = 0;
+    public int typeId = 0;
     public int id;
     public Camera mainCamera;
     private string itemName;
@@ -290,6 +290,7 @@ public class InteractionsWithItems : MonoBehaviour
                 item.transform.position = inspectPoint.transform.position;
 
                 transform.rotation = inspectPoint.transform.rotation;
+                transform.Rotate(-90f, -inspectPoint.transform.rotation.y, inspectPoint.transform.rotation.z);
 
                 //transform.Rotate(Vector3.up, -mouseX * rotationSpeed * Time.deltaTime, Space.World);
                 //transform.Rotate(Vector3.right, mouseY * rotationSpeed * Time.deltaTime, Space.Self);
@@ -303,6 +304,10 @@ public class InteractionsWithItems : MonoBehaviour
                     playerMovement.isCrouch = false;
                 }
             }
+        }
+        else if(typeId==-1)
+        {
+            return;
         }
     }
 
