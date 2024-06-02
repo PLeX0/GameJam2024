@@ -622,7 +622,7 @@ GameObject:
   - component: {fileID: 72699908}
   m_Layer: 0
   m_Name: fragmentPuzzle
-  m_TagString: Untagged
+  m_TagString: PaintingFragment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -646,8 +646,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.7682544, y: 0.8400844, z: 0.72787833}
-  m_Center: {x: -0.2234005, y: 0.95419014, z: 0.4050041}
+  m_Size: {x: 1.4065031, y: 5.3909917, z: 0.32800183}
+  m_Center: {x: -0.2587551, y: -1.2549555, z: 0.20506588}
 --- !u!114 &72699909
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16395,7 +16395,7 @@ Transform:
   m_GameObject: {fileID: 1338654661}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: 0.58}
+  m_LocalPosition: {x: 0, y: 0, z: 0.894}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

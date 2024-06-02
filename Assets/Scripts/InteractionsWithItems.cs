@@ -295,14 +295,14 @@ public class InteractionsWithItems : MonoBehaviour
                 //transform.Rotate(Vector3.up, -mouseX * rotationSpeed * Time.deltaTime, Space.World);
                 //transform.Rotate(Vector3.right, mouseY * rotationSpeed * Time.deltaTime, Space.Self);
 
-                if (Input.GetKeyUp(KeyCode.E))
-                {
-                    inspectUI.SetActive(false);
-                    playerMovement.isInspecting = false;
-                    playerMovement.isMoveingItem = false;
-                    isBeingInspected = false;               
-                    playerMovement.isCrouch = false;
-                }
+                //if (Input.GetKeyUp(KeyCode.E))
+                //{
+                //    inspectUI.SetActive(false);
+                //    playerMovement.isInspecting = false;
+                //    playerMovement.isMoveingItem = false;
+                //    isBeingInspected = false;               
+                //    playerMovement.isCrouch = false;
+                //}
             }
         }
         else if(typeId==-1)

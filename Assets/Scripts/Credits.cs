@@ -13,7 +13,7 @@ public class Credits : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position += new Vector3(0, 0.02f, 0);
+        transform.position += new Vector3(0, 0.06f, 0);
         if (Input.GetKey(KeyCode.Escape) || Input.GetKey(KeyCode.Space))
             Application.Quit();
     }
