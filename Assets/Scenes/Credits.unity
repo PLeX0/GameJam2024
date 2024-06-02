@@ -273,9 +273,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Aleksandra Szewczyk - 2D Artist\n\nJulia Dabi Sarapuk- 2D/3D artist, Game
-    designer\n\nKacper Bajda - Programming, Unity\n\nPatrycja \u0141okczewska - 2D
-    Artist\n\nPawe\u0142 Kr\u0119czewski - 3D, Enivorment, Unity\n\n\n\n\n"
+  m_text: "Brush Of Love\n\nAleksandra Szewczyk - 2D Artist\n\nJulia Dabi Sarapuk-
+    2D/3D artist, Game designer\n\nKacper Bajda - Programming, Unity\n\nPatrycja
+    \u0141okczewska - 2D Artist\n\nPawe\u0142 Kr\u0119czewski - 3D, Enivorment, Unity\n\n\n\n\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

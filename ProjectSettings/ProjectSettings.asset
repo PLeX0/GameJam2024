@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: DefaultCompany
-  productName: gamejam_
+  productName: Brush Of Love
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -158,7 +158,7 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
-    Standalone: com.DefaultCompany.gamejam-
+    Standalone: com.DefaultCompany.Brush-Of-Love
   buildNumber:
     Standalone: 0
     VisionOS: 0
@@ -283,7 +283,7 @@ PlayerSettings:
   - m_BuildTarget: 
     m_Icons:
     - serializedVersion: 2
-      m_Icon: {fileID: 2800000, guid: c9159fc39d6b60149b6b49c42ee55311, type: 3}
+      m_Icon: {fileID: 2800000, guid: 031d7b8cd977a924089a465951a33465, type: 3}
       m_Width: 128
       m_Height: 128
       m_Kind: 0
